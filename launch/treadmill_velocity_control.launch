@@ -1,0 +1,21 @@
+<launch>
+
+    <node name="PID" pkg="pid" type="controller" output="screen" >
+      <param name="node_name" value="position_controller" />
+      <param name="Kp" value="0.1" />
+      <param name="Ki" value="0.0" />
+      <param name="Kd" value="0.2" />
+      <param name="upper_limit" value="100.0" />
+      <param name="lower_limit" value="-100.0" />
+      <param name="enable_statistics" value="true" />
+    </node> 
+
+    <node name="Tiva_Interface" pkg="treadmill" type="ros_speed_enabl" output="screen" />
+
+    <node name="Input_Desired_Speed" pkg="treadmill" type="ros_read_vel" output="screen" />
+
+    <node name="rqt_reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure"/>
+
+    <node name="rqt_plot" pkg="rqt_plot" type="rqt_plot" args="/state/data /setpoint/data" />
+
+</launch>
