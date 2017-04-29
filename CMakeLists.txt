@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(treadmill)
+project(velocity_control)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -44,18 +44,6 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * uncomment the generate_messages entry below
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
-## Generate messages in the 'msg' folder
-add_message_files(
-   FILES
-   PWM.msg
-   Encoder.msg
-   Position.msg
-   AccGyro.msg
-   Force.msg
-   RobotAngles.msg
-   RobotInertiaMeasurements.msg
-   RobotForces.msg
-)
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -113,19 +101,13 @@ include_directories(
 #   src/${PROJECT_NAME}/legged_robot.cpp
 # )
 
-add_executable(ros_read_vel src/ros_read_vel.cpp)
-target_link_libraries(ros_read_vel ${catkin_LIBRARIES})
-add_dependencies(ros_read_vel treadmill_generate_messages_cpp)
+add_executable(Read_Desired_Velocity src/Read_Desired_Velocity.cpp)
+target_link_libraries(Read_Desired_Velocity ${catkin_LIBRARIES})
+add_dependencies(Read_Desired_Velocity treadmill_generate_messages_cpp)
 
-add_executable(ros_speed_enabl src/ros_speed_enabl.cpp)
-target_link_libraries(ros_speed_enabl ${catkin_LIBRARIES})
-add_dependencies(ros_speed_enabl treadmill_generate_messages_cpp)
-
-
-
-
-
-
+add_executable(Tiva_Velocity_Interface src/Tiva_Velocity_Interface.cpp)
+target_link_libraries(Tiva_Velocity_Interface ${catkin_LIBRARIES})
+add_dependencies(Tiva_Velocity_Interface treadmill_generate_messages_cpp)
 
 ## Declare a cpp executable
 # add_executable(legged_robot_node src/legged_robot_node.cpp)

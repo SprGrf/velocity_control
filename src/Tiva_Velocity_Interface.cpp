@@ -29,7 +29,7 @@
 #define ASYNC
 // UDP port to send data to
 #define PORT_BRD 2011                                          
-// Tiva Back Left Leg board IP
+// Tiva treadmill board IP
 #define BRD_IP "192.168.1.82"                                   
 
 using namespace std;
@@ -139,7 +139,7 @@ int main(int argc, char **argv)
   SendBuffer[0] = 0x31;
 
   // Initialize ROS node
-  ros::init(argc, argv, "ros_speed");
+  ros::init(argc, argv, "Tiva_Velocity_Interface");
   ros::NodeHandle n;
 
 

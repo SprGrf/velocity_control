@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
-  <name>treadmill</name>
+  <name>velocity_control</name>
   <version>1.0.0</version>
-  <description>The treadmill package</description>
+  <description>The velocity_control package</description>
 
   <maintainer email="sp.garyf@gmail.com">Spyridon Garyfallidis</maintainer>
   <license>BSD</license>

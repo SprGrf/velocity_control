@@ -10,9 +10,9 @@
       <param name="enable_statistics" value="true" />
     </node> 
 
-    <node name="Tiva_Interface" pkg="treadmill" type="ros_speed_enabl" output="screen" />
+    <node name="Tiva_Interface" pkg="velocity_control" type="Tiva_Velocity_Interface" output="screen" />
 
-    <node name="Input_Desired_Speed" pkg="treadmill" type="ros_read_vel" output="screen" />
+    <node name="Input_Desired_Speed" pkg="velocity_control" type="Read_Desired_Velocity" output="screen" />
 
     <node name="rqt_reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure"/>
 

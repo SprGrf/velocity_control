@@ -19,7 +19,7 @@ int main(int argc, char **argv)
   string inputS;
 
   // Initialize ROS node
-  ros::init(argc, argv, "ros_read_vel");
+  ros::init(argc, argv, "Read Desired Velocity");
   ros::NodeHandle n;
   // Publish for desired position message
   ros::Publisher read_position_pub = n.advertise<std_msgs::Float64>("setpoint", 1000);
